@@ -1,0 +1,10 @@
+# Example configuration.yaml entry
+switch:
+  - platform: command_line
+    switches:
+      gate:
+        friendly_name: Gate
+        command_on: "python3 /config/python_scripts/shellyOne.py --server https://shelly-********.shelly.cloud --id ******** --auth_key ******** -c on"
+        command_off: "python3 /config/python_scripts/shellyOne.py --server https://shelly-********.shelly.cloud --id ******** --auth_key ******** -c off"
+        command_state: "python3 /config/python_scripts/shellyOne.py --server https://shelly-********.shelly.cloud --id ******** --auth_key ******** -c relay_state"
+        value_template: '{{ value == "True" }}'
